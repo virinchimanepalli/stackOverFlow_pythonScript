@@ -16,31 +16,22 @@ def make_req(error):
 
 def get_url(json_dict):
     url_list = []
-    # k =0
-    # score
     count = 0
     for i in json_dict['items'] :
         if i["is_answered"] and i["answer_count"] >=2: #count is not mandatory
             url_list.append(i["link"])
         count+=1
 
-
-
-        if count == 3 or count == len(i):
+        if count == 1 or count == len(i):
             break
         
-
     if len(url_list) is None:
         print("empty")
     for i in url_list:
-        print(len(url_list))
         webbrowser.open(i)
 
 def browser1(msg):
-    import webbrowser
     webbrowser.open(msg)
-
-
 
 
 if __name__ =="__main__":
